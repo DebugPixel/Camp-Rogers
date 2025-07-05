@@ -1,0 +1,8 @@
+GameProject {
+ ID "CampRogers"
+ GUID "65C652EC50502527"
+ TITLE "Camp_Rogers"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
