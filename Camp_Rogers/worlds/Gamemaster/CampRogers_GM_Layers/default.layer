@@ -1,19 +1,32 @@
 SCR_MapEntity MapEntity : "{731564B66F91B107}Prefabs/World/Game/MapEntity.et" {
  coords 854.852 125.447 535.661
- {
-  CommentEntity {
-   coords 0 1 0
-   m_Comment "MapEntity: "\
-   "Set up map textures"
-   m_Color 0 0 0
-   m_FaceCamera 1
-   m_TextBackground 1
-   m_BackgroundColor 1 0.6 0
-   m_BackgroundTransparency 0
-  }
- }
+ "Map Geometry Data" "{E5D253DAE152F763}worlds/Gamemaster/CampRogers_GM.topo"
+ "Satellite background image" "{2B3ECAB4BC28DBED}UI/Textures/Map/worlds/RESULT.edds"
 }
 SCR_AIWorld SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{65CAB2860D16FADB}" {
+     NavmeshFile "{9658A970B3D18D33}worlds/Navmesh/Navmesh_GM_Soldiers.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE5536BF701}" {
+     NavmeshFile "{CC3F37A8FC3DFD16}worlds/Navmesh/Navmesh_GM_btelike.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90BD0EC793647D}" {
+     NavmeshFile "{039BE6E976D3AC59}worlds/Navmesh/Navmesh_GM_LowRes.nmn"
+    }
+   }
+  }
+ }
  coords 854.852 125.447 534.661
  {
   CommentEntity {
@@ -32,5 +45,15 @@ PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/Perc
  coords 854.852 125.447 533.661
 }
 SCR_GameModeEditor GameMode_Editor_Full : "{DA3986AF1B5032B7}Prefabs/MP/Modes/Editor/GameMode_Editor_Full.et" {
+ components {
+  SCR_InitWeatherComponent "{58DCAB6D83A0CB17}" {
+   m_iSetWeatherConstant 0
+  }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+   m_iReceiveKillFeedType ALL
+   m_eFriendlyFireKillFeedType DEFAULT_SETTINGS
+  }
+ }
  coords 854.852 125.447 532.661
 }
